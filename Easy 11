@@ -1,0 +1,26 @@
+def get_input():
+    n = int(input())
+    array = [0,1]
+    return n, array
+
+def main(n, array):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    elif n > 30:
+        return 'This input is too large'
+    i = 0
+    n -= 1
+    first = 0
+    second = 1
+    while i < n:
+        fib = array[first] + array[second]
+        array.append(fib)
+        i += 1
+        first += 1
+        second += 1
+    return array[len(array)-1]
+
+(n, array) = get_input()
+print(main(n, array))
